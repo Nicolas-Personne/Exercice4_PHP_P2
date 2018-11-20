@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form method="post">
-<select name="check">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-</select>
-<input type="submit" name="button" value="Valider">
-    </form>
-    <?php
-    $magnitude = $_POST['check'];
-    if (isset($_POST['button'])){
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <form method="post">
+    <select name="check">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <input type="submit" name="button" value="Valider">
+  </form>
+  <a href="http://PHP/"><button type="button" class="btn btn-danger" name="button">Accueil</button></a>
+  <?php
+  $magnitude = (isset($_POST['check']));
+  if (isset($_POST['button'])){
     switch ($magnitude){
       case 1:
       echo 'Micro-séisme impossible à ressentir.';
@@ -49,8 +51,11 @@
       case 9:
       echo 'Séisme capable de tout détruire sur une très vaste zone.';
       break;
+      default:
+      echo 'raté';
+      break;
     }
   }
-      ?>
-  </body>
+  ?>
+</body>
 </html>
